@@ -37,9 +37,10 @@ notesCtrl.updateNotes = async (req, res) => {
     res.redirect('/notes')
 }
 
-notesCtrl.deleteNote = (req, res) => {
-    req.flash('success_msg', 'Note deleted successfully')
-    res.redirect('/notes')
-}
+notesCtrl.deleteNote = async (req, res) => {
+    await Note.findByIdAndDelete(req.params.id);
+    req.flash("success_msg", "Note Deleted Successfully");
+    res.redirect("/notes");
+};
 
 module.exports = notesCtrl

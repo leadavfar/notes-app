@@ -1,3 +1,10 @@
 body{
-    background: #1488CC;
+    /* background: #1488CC; */
+    background: #004268;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
 }
